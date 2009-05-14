@@ -5,7 +5,7 @@ Group:		Sciences/Mathematics
 License:	BSD
 Summary:	Double-Double and Quad-Double Arithmetic
 Version:	2.3.7
-Release:	%mkrel 2
+Release:	%mkrel 3
 Source:		http://www.cs.berkeley.edu/~yozo/software/qd-%{version}.tar.gz
 URL:		http://www.cs.berkeley.edu/~yozo/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -24,6 +24,7 @@ programs.
 %package	-n %{devname}
 Group:		Development/C++
 Summary:	Double-Double and Quad-Double Arithmetic
+Provides:	qd-static-devel = %{version}-%{release}
 
 %description	-n %{devname}
 This package provides numeric types of twice the precision of IEEE
