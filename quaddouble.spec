@@ -5,7 +5,7 @@ Group:		Sciences/Mathematics
 License:	BSD
 Summary:	Double-Double and Quad-Double Arithmetic
 Version:	2.3.7
-Release:	%mkrel 3
+Release:	%mkrel 4
 Source:		http://www.cs.berkeley.edu/~yozo/software/qd-%{version}.tar.gz
 URL:		http://www.cs.berkeley.edu/~yozo/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -40,7 +40,7 @@ programs.
 
 %build
 %configure
-%make
+%make CXXFLAGS='%{optflags} -fPIC'
 
 %install
 %makeinstall_std
