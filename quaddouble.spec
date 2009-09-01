@@ -1,12 +1,15 @@
 %define devname	%mklibname -d -s qd
 
+Epoch:		1
 Name:		quaddouble
 Group:		Sciences/Mathematics
 License:	BSD
 Summary:	Double-Double and Quad-Double Arithmetic
-Version:	2.3.7
-Release:	%mkrel 4
-Source:		http://www.cs.berkeley.edu/~yozo/software/qd-%{version}.tar.gz
+Version:	2.2.p9
+Release:	%mkrel 1
+# Modified to use sagemath spkg due to doctest failures that are clean
+# problems in the previous upstream tarball
+Source:		quaddouble-%{version}.tar.bz2
 URL:		http://www.cs.berkeley.edu/~yozo/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
@@ -36,7 +39,7 @@ with only minor modifications to conventional C++ and Fortran-90
 programs.
 
 %prep
-%setup -q -n qd-%{version}
+%setup -q -n %{name}-%{version}/src
 
 %build
 %configure
