@@ -13,8 +13,6 @@ Source:		quaddouble-%{version}.tar.bz2
 URL:		http://www.cs.berkeley.edu/~yozo/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
-BuildRequires:	gcc-gfortran
-
 %description
 This package provides numeric types of twice the precision of IEEE
 double (106 mantissa bits, or approximately 32 decimal digits) and
@@ -42,11 +40,12 @@ programs.
 %setup -q -n %{name}-%{version}/src
 
 %build
-%configure
+%configure --enable-fortran=no
 %make CXXFLAGS='%{optflags} -fPIC'
 
 %install
 %makeinstall_std
+rm -fr %{buildroot}%{_libdir}/qd
 
 %clean
 rm -rf %{buildroot}
@@ -57,7 +56,5 @@ rm -rf %{buildroot}
 %dir %{_includedir}/qd
 %{_includedir}/qd/*
 %{_libdir}/*.a
-%dir %{_libdir}/qd
-%{_libdir}/qd/*
 %doc %dir %{_datadir}/doc/qd
 %doc %{_datadir}/doc/qd/*
