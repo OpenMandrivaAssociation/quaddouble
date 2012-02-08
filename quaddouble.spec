@@ -44,10 +44,10 @@ programs.
 %makeinstall_std
 rm -fr %{buildroot}%{_libdir}/qd
 
-%files		-n %{devname}
+%files	-n %{devname}
 %{_bindir}/qd-config
 %dir %{_includedir}/qd
 %{_includedir}/qd/*
-%{_libdir}/*.a
 %doc %dir %{_datadir}/doc/qd
 %doc %{_datadir}/doc/qd/*
+%{_libdir}/*.a
