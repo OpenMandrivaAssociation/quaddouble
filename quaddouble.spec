@@ -5,13 +5,10 @@ Name:		quaddouble
 Group:		Sciences/Mathematics
 License:	BSD
 Summary:	Double-Double and Quad-Double Arithmetic
-Version:	2.2.p9
-Release:	%mkrel 1
-# Modified to use sagemath spkg due to doctest failures that are clean
-# problems in the previous upstream tarball
-Source:		quaddouble-%{version}.tar.bz2
+Version:	2.3.12
+Release:	1
+Source0:	http://crd.lbl.gov/~dhbailey/mpdist/qd-%{version}.tar.gz
 URL:		http://www.cs.berkeley.edu/~yozo/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This package provides numeric types of twice the precision of IEEE
@@ -37,7 +34,7 @@ with only minor modifications to conventional C++ and Fortran-90
 programs.
 
 %prep
-%setup -q -n %{name}-%{version}/src
+%setup -q -n qd-%{version}
 
 %build
 %configure --enable-fortran=no
@@ -47,11 +44,7 @@ programs.
 %makeinstall_std
 rm -fr %{buildroot}%{_libdir}/qd
 
-%clean
-rm -rf %{buildroot}
-
 %files		-n %{devname}
-%defattr(-,root,root)
 %{_bindir}/qd-config
 %dir %{_includedir}/qd
 %{_includedir}/qd/*
