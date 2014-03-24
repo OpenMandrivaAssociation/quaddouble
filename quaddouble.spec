@@ -10,6 +10,8 @@ Release:	1
 Source0:	http://crd.lbl.gov/~dhbailey/mpdist/qd-%{version}.tar.gz
 URL:		http://www.cs.berkeley.edu/~yozo/
 
+%define debug_package %{nil}
+
 %description
 This package provides numeric types of twice the precision of IEEE
 double (106 mantissa bits, or approximately 32 decimal digits) and
