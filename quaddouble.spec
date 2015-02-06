@@ -6,7 +6,7 @@ Group:		Sciences/Mathematics
 License:	BSD
 Summary:	Double-Double and Quad-Double Arithmetic
 Version:	2.3.12
-Release:	1
+Release:	2
 Source0:	http://crd.lbl.gov/~dhbailey/mpdist/qd-%{version}.tar.gz
 URL:		http://www.cs.berkeley.edu/~yozo/
 
