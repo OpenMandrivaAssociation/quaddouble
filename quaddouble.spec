@@ -12,6 +12,11 @@ URL:		https://www.cs.berkeley.edu/~yozo/
 
 %define debug_package %{nil}
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 %description
 This package provides numeric types of twice the precision of IEEE
 double (106 mantissa bits, or approximately 32 decimal digits) and
